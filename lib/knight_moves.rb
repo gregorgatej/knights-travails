@@ -33,3 +33,16 @@ def valid_moves(pos)
   valid_moves.filter! { |x, y| (0..7).cover?(x) && (0..7).cover?(y) }
   valid_moves
 end
+
+def pretty_print_knight_moves(start_pos, end_pos)
+  path = knight_moves(start_pos, end_pos)
+  if path
+    puts "Congratulations! You've made it in #{path.length - 1} moves."
+    puts "The path goes like this:"
+    path.each do |move|
+      p move
+    end
+  else
+    puts "No path found."
+  end
+end
