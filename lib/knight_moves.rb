@@ -11,9 +11,9 @@ end
 
 def valid_moves(pos)
   x, y = pos
-  neighbors = MOVES.map do |dx, dy|
+  valid_moves = MOVES.map do |dx, dy|
     [x + dx, y + dy]
   end
-  neighbors.filter! { |x, y| (0..7).cover?(x) && (0..7).cover?(y) }
-  neighbors
+  valid_moves.filter! { |x, y| (0..7).cover?(x) && (0..7).cover?(y) }
+  valid_moves
 end
